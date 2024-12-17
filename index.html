@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT System and Information Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- body -->
+<body>
+   <header class="header">
+    <nav> 
+        <a href="index.html"><img src="image/logo.png"></a>
+        <div class="navlink" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="viewlogs.html">VIEW LOGS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>               
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav> 
+<div class="text-box">
+    <h1>IoT System And Information Engineering</h1>
+    <p>SHCOOL OF ENGINEERING : KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG</p>
+    <br>
+    <button id=droneconfig class="view-cur">Drone Configuration</button>
+    <button id=temlog class="view-cur">Temperature Log Form</button>
+    
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="popup">
+            <div class="container">
+                <div class="table-container">
+                    <h1>Drone Configuration</h1>
+                    <div class="table-scroll">
+                        <table id="drone-table">
+                            <thead>
+                                <tr>
+                                    <th>Drone ID</th>
+                                    <th>Drone Name</th>
+                                    <th>Light</th>
+                                    <th>Maximum Speed</th>
+                                    <th>Country</th>
+                                    <th>Population</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Drone data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div id="myModal2" class="modal">
+    <div class="modal-content">
+        <span class="close2">&times;</span>
+        <div class="temperature-form-container">
+            <h2>Update Temperature Log</h2>
+            
+            <form id="temperatureForm">
+                <div class="form-group">
+                    <label for="droneId">Drone ID:</label>
+                    <input 
+                        type="text" 
+                        id="droneId" 
+                        name="droneId" 
+                        placeholder="Enter Drone ID"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="temperature">Temperature (°C):</label>
+                    <input 
+                        type="number" 
+                        id="temperature" 
+                        name="temperature" 
+                        placeholder="Enter Temperature"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    Update Temperature
+                </button>
+            </form>
+        
+            <!-- Loading Animation -->
+            <div id="loading" class="loading">
+                <div class="loader"></div>
+            </div>
+        
+            <!-- Message Container -->
+            <div id="messageContainer" style="margin-top: 20px;"></div>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <p>ข้อมูลถูกส่งสำเร็จ!</p>
+            </div>
+        
+            <!-- Result/Error Message -->
+            <div id="resultMessage" class="error-message" style="display:none;"></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+
+
+
+<div id="loading" class="loading">
+    <div class="loader"></div>
+</div>
+
+
+<script src="script.js"></script>
+ <!-- ------------- Javascript for Toggle Menu ------------   -->
+<script>
+ var navLinks = document.getElementById("navLinks");
+ function showMenu(){
+    navLinks.style.right = "0";
+ }
+ function hideMenu(){
+    navLinks.style.right = "-200px";
+}
+
+</script>
+
+</body>
+</html>
